@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AppConfiguration>
+    <Debug>OFF</Debug>
+    <PatchValidation>
+        <Interval>5</Interval>
+        <Picture>Tabel.jpg</Picture>
+        <Item>
+            <Name>CD</Name>
+            <Value>12</Value>
+        </Item>
+        <Item>
+            <Name>Instruction</Name>
+            <Value>12</Value>
+        </Item>
+    </PatchValidation>
+    <SessionInfo>
+        <ErrorTolerance>100</ErrorTolerance>
+        <Detections>
+            <Item>
+                <Name>CD</Name>
+                <CountRef>20</CountRef>
+            </Item>
+            <Item>
+                <Name>Instruction</Name>
+                <CountRef>10</CountRef>
+            </Item>
+			<Item>
+                <Name>Accessory</Name>
+                <CountRef>10</CountRef>
+            </Item>
+			<Item>
+                <Name>HMI</Name>
+                <CountRef>10</CountRef>
+            </Item>
+        </Detections>
+        <EndPoints>
+            <Item>
+                <Name>Packed box</Name>
+                <CountRef>10</CountRef>
+            </Item>
+        </EndPoints>
+    </SessionInfo>
+    <MES>
+        <UART>
+            <Port>COM2</Port>
+            <PortRate>9600</PortRate>
+            <TimeOut>5</TimeOut>
+        </UART>
+        <U_FIO>078</U_FIO>
+        <KFT_FIO>079</KFT_FIO>
+    </MES>
+    <YOLO_Config>
+        <StructureFilePath>MODEL/yolo/config/yolov4-hmi-packing.cfg</StructureFilePath>
+        <WeightPath>MODEL/yolo/config/yolov4-hmi-packing.weights</WeightPath>
+        <MetaPath>MODEL/yolo/config/obj.data</MetaPath>
+        <VisionIgnoreds>
+            <Name>Scanner</Name>
+            <Name>Unpacked box</Name>
+            <Name>Label</Name>
+        </VisionIgnoreds>
+    </YOLO_Config>
+    <FIDINPUT>
+        <RegExp>^[0-9A-Z]{7,9}\-[0-9A-Z]{5}\-[0-9A-Z]{4}\+[0-9A-Z]{12,15}\+S(V\-[0-9A-Z]{8})$</RegExp>
+        <RegExp>^S(V\-[0-9A-Z]{8})$</RegExp>
+        <RegExp>^(V\-[0-9A-Z]{8})$</RegExp>
+    </FIDINPUT>
+</AppConfiguration>
+

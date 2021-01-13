@@ -1,0 +1,3 @@
+classes = 8
+names = MODEL/yolo/config/obj.names
+
